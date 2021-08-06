@@ -4,7 +4,8 @@ Terraform configuration for Cluster in the Cloud
 https://cluster-in-the-cloud.readthedocs.io
 
 ## Changes required:
-* variables.tf
+
+*variables.tf
 ```
 # AWS Information
 variable "region" {
@@ -12,7 +13,7 @@ variable "region" {
 }
 ```
 
-* security-groups.tf
+*security-groups.tf
 ```
 resource "aws_security_group" "mgmt" {
   name        = "citc-mgmt-${local.cluster_id}"
