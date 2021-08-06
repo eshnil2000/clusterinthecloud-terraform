@@ -1,6 +1,6 @@
 # AWS Information
 variable "region" {
-  default = "eu-west-1"
+  default = "us-west-1"
 }
 
 variable "availability_zone" {
