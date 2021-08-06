@@ -6,7 +6,7 @@ https://cluster-in-the-cloud.readthedocs.io
 Changes required:
 
 variables.tf
-
+```
 # AWS Information
 variable "region" {
   default = "us-west-1"
@@ -24,6 +24,6 @@ resource "aws_security_group" "mgmt" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["73.48.134.89/32"]
+    cidr_blocks = ["YOUR.IP.ADDRESS/32"]
   }
 ```
