@@ -7,7 +7,7 @@ resource "aws_security_group" "mgmt" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["73.48.134.89/32"]
+    cidr_blocks = [format("%s/%s",module.myip.address,"32")]
   }
 
   ingress {
@@ -31,6 +31,7 @@ resource "aws_security_group" "mgmt" {
     protocol    = "-1"
     cidr_blocks = [aws_vpc.vpc_network.cidr_block]
   }
+  
 
   egress {
     from_port       = 0
@@ -56,6 +57,12 @@ resource "aws_security_group" "compute" {
     protocol    = "-1"
     cidr_blocks = [aws_vpc.vpc_network.cidr_block]
   }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [aws_vpc.vpc_network.cidr_block]
+  }
 
   egress {
     from_port       = 0
@@ -79,6 +86,12 @@ resource "aws_security_group" "storage" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
+    cidr_blocks = [aws_vpc.vpc_network.cidr_block]
+  }
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "ssh"
     cidr_blocks = [aws_vpc.vpc_network.cidr_block]
   }
 
