@@ -93,12 +93,7 @@ resource "aws_security_group" "storage" {
     protocol    = "-1"
     cidr_blocks = [aws_vpc.vpc_network.cidr_block]
   }
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "ssh"
-    cidr_blocks = [aws_vpc.vpc_network.cidr_block]
-  }
+  
 
   egress {
     from_port       = 0
