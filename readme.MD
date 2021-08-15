@@ -27,3 +27,12 @@ resource "aws_security_group" "mgmt" {
     cidr_blocks = ["YOUR.IP.ADDRESS/32"]
   }
 ```
+
+
+After install script complete, add Management Instance IP address to the security group (created manually) of the Packer instance: 
+```
+sudo /usr/local/bin/run-packer
+sudo -i
+/root/run_ansible --skip-tags=packer
+```
+
