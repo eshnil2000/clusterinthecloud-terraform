@@ -1,3 +1,8 @@
+module myip {
+  source  = "4ops/myip/http"
+  version = "1.0.0"
+}
+  
 resource "aws_security_group" "mgmt" {
   name        = "citc-mgmt-${local.cluster_id}"
   description = "Management node"
