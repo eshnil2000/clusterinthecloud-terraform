@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=py-matinv     # create a short name for your job
+#SBATCH --nodes=6                # node count
+#SBATCH --ntasks=6               # total number of tasks across all nodes
+### Assume slurm has been installed using: https://github.com/eshnil2000/clusterinthecloud-installer.git
+###Run this command in user directory, logged in as user, not root
+## Assuming /mnt/shared/ is the shared NFS folder,  cd  /mnt/shared/home/nick and run:
+#git clone https://github.com/spack/spack ~/spack
+# source /mnt/shared/home/nick/spack/share/spack/setup-env.sh
+#spack install anaconda3/2020.11
+#spack env create myenv
+#spack env activate -p myenv
+
+source /mnt/shared/home/nick/spack/share/spack/setup-env.sh
+alias spack=/mnt/shared/spack/bin/spack
+
+module load anaconda3/2020.11
+srun -l hostname
+srun -l python /mnt/shared/home/nick/matrix_inverse.py
