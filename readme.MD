@@ -36,3 +36,11 @@ sudo -i
 /root/run_ansible --skip-tags=packer
 ```
 
+useful references:
+* Speed up ratio
+**** https://researchcomputing.princeton.edu/support/knowledge-base/slurm#multithreaded
+* scaling analysis
+**** https://researchcomputing.princeton.edu/support/knowledge-base/scaling-analysis
+* cluster usage
+**** https://github.com/eshnil2000/hpc_beginning_workshop_slurm_cluster/tree/master/05_effective_usage
+
