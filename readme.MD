@@ -44,3 +44,5 @@ useful references:
 * cluster usage
 **** https://github.com/eshnil2000/hpc_beginning_workshop_slurm_cluster/tree/master/05_effective_usage
 
+* Sample Slurm file:
+* https://github.com/eshnil2000/clusterinthecloud-terraform/blob/master/test.slm
